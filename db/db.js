@@ -1,6 +1,13 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
+import mongoose from 'mongoose';
 
-// This will create an new instance of "MongoMemoryServer" and automatically start it
-const mongod = await MongoMemoryServer.create();
+const connectDB = async () => {
+  const mongod = await MongoMemoryServer.create();
+  const uri = mongod.getUri();
+  await mongoose.connect(uri);
+  console.log('MongoDB Memory Server conectado com sucesso!');
+  
+  return mongod;
+};
 
-export default mongod;
+export default connectDB;

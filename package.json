@@ -15,9 +15,11 @@
     "express": "^5.1.0",
     "jose": "^6.1.2",
     "mongodb": "^7.0.0",
-    "mongodb-memory-server": "^10.3.0",
     "mongodb-memory-server-global": "^10.3.0",
-    "mongoose": "^9.0.0",
     "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.3.0",
+    "mongoose": "^9.0.0"
   }
 }
