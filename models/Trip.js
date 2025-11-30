@@ -6,8 +6,7 @@ const tripSchema = new mongoose.Schema({
         ref:'User', 
         required: true 
     },
-    addressStartTrip: { type: String, required: true },
-    addressEndTrip: { type: String, required: true },
+    route: { type: mongoose.Schema.Types.ObjectId, ref: 'Route'},
     date: { 
         type: Date, 
         default: Date.now
@@ -16,7 +15,8 @@ const tripSchema = new mongoose.Schema({
         type: String,
         enum: ['pending', 'active', 'completed', 'canceled'],
         default: 'pending'
-    }
+    },
+    price: { type: Number, required: true }
 })
 
 export default mongoose.model('Trip', tripSchema)
