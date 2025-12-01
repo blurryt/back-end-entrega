@@ -1,11 +1,12 @@
-import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
+import dotenv from "dotenv"
+dotenv.config()
+
+const uri = process.env.MONGODB_URI
 
 const connectDB = async () => {
-  const mongod = await MongoMemoryServer.create();
-  const uri = mongod.getUri();
-  await mongoose.connect(uri);
-  console.log('MongoDB Memory Server conectado com sucesso!');
+  const mongod = await mongoose.connect(uri);
+  console.log('MongoDB Atlas conectado com sucesso!');
   
   return mongod;
 };

@@ -5,7 +5,7 @@ import express from 'express'
 import cors from 'cors'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import mongoose from 'mongoose' // Importante para validar IDs
+import mongoose from 'mongoose'
 
 import connectDB from './db/db.js'
 
